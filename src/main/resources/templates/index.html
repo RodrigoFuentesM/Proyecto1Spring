@@ -1,0 +1,36 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring MVC y Thymeleaf</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+       
+        <div th:if="${personas != null and !personas.empty}">
+            <table border="1">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                </tr>
+                <tr th:each="p: ${personas}">
+                    <td th:text="${p.nombre}"></td>
+                    <td th:text="${p.apellido}"></td>
+                    <td th:text="${p.email}"></td>
+                    <td th:text="${p.telefono}"></td>
+                </tr>
+            </table>
+        </div>
+        <div th:if="${personas == null or personas.empty}">
+            No hay personas registradas
+        </div>
+
+
+
+        <br/>
+
+    </body>
+</html>
