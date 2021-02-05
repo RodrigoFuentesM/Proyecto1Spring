@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Data;
 
-@Data
+@Data // para poder Generar los Getter y Setter
 @Entity
 @Table(name="persona")
 public class Persona implements Serializable{
@@ -19,7 +19,7 @@ public class Persona implements Serializable{
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long idPersona; //idPersona es la identidad de la tabla/entidad de persona en la base de datos
+    private Long idPersona; //idPersona es la identidad de la tabla/entidad de persona en la base de datos
     private String nombre;
     private String apellido;
     private String email;
