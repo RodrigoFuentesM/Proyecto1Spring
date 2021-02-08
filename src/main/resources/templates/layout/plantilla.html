@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Plantilla</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:fragment="header">
+            <form method="POST" th:action="@{/logout}">
+                <!--
+                <a href="#" onclick="this.parentNode.submit();">
+                    Cerrar Sesión
+                </a>
+                -->
+                <b>Bienvenido: </b><span sec:authentication="name"></span>
+                <br/>
+                <input type="submit" value="Cerrar Sesión"/>
+            </form>
+            <h1>Control de Personas</h1>
+        </header>
+        
+        <footer th:fragment="footer">
+            <span>Derechos Reservados
+                <a href="#">Desarrollo Full Stack Java</a>
+            </span>
+        </footer>
+    </body>
+</html>
